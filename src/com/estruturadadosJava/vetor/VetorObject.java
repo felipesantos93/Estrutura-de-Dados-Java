@@ -1,14 +1,14 @@
 package com.estruturadadosJava.vetor;
 
-public class Vetor {
-    private String[] elemento;
+public class VetorObject {
+    private Object[] elemento;
     private int tamanho;
 
-    public Vetor(int capacidade ) {
-        this.elemento = new String[capacidade];
+    public VetorObject(int capacidade ) {
+        this.elemento = new Object[capacidade];
     }
 
-    public boolean adicionar(String elemento){
+    public boolean adicionar(Object elemento){
         amumentaCapacidade();
         if (this.tamanho < this.elemento.length){
             this.elemento[this.tamanho] = elemento;
@@ -17,7 +17,7 @@ public class Vetor {
         }
         return false;
     }
-    public boolean adicionar(int posicao, String elemento){
+    public boolean adicionar(int posicao, Object elemento){
         if (!(posicao >= 0 && posicao < tamanho)) {
             throw new IllegalArgumentException("posição inválida");
         }
@@ -52,7 +52,7 @@ public class Vetor {
 
     }
 
-    public String busca (int posicao) {
+    public Object busca (int posicao) {
         if (!(posicao >= 0 && posicao < tamanho)) {
             throw new IllegalArgumentException("posição inválida");
         }
@@ -60,7 +60,7 @@ public class Vetor {
 
     }
 
-    public boolean busca (String elemento){
+    public boolean busca (Object elemento){
         for (int i = 0 ; i<this.tamanho ; i++){
             if (this.elemento[i].equals(elemento)){
                 return true;
@@ -71,7 +71,7 @@ public class Vetor {
     }
     public void amumentaCapacidade(){
         if (this.tamanho == this.elemento.length){
-            String[] elementosNovos = new String[this.elemento.length * 2];
+            Object[] elementosNovos = new Object[this.elemento.length * 2];
             for (int i = 0; i < this.elemento.length; i++) {
                 elementosNovos[i]= this.elemento[i];
             }
@@ -82,14 +82,12 @@ public class Vetor {
     public void remove(int posicao){
         if (!(posicao >= 0 && posicao < tamanho)) {
             throw new IllegalArgumentException("posição inválida");
-    }
+        }
         for (int i = posicao; i <this.tamanho-1; i++) {
             this.elemento[1] = this.elemento[i+1];
         }
         this.tamanho--;
-}
-
-
+    }
 
 
 }
