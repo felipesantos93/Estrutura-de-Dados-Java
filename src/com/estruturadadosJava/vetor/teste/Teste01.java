@@ -1,4 +1,4 @@
-package com.estruturadadosJava.vetor.testes;
+package com.estruturadadosJava.vetor.teste;
 
 import com.estruturadadosJava.vetor.Vetor;
 
